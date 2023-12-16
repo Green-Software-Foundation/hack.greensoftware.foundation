@@ -119,8 +119,8 @@ const CustomForm = ({ status, message, onValidated }) => {
       </div>
       <p className="text-primary-lighter text-xs text-left mb-3">
         * We are using GitHub as the hackathon platform so you must have a valid
-        GitHub login and username, if you don't you can create one using this
-        link
+        GitHub login and username, if you don't you can create one using <a href="https://github.com/join" target="_blank">this
+        link</a>
       </p>
       <Form.Submit asChild>
         <div className="mt-4 flex items-center justify-center">
@@ -130,7 +130,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             data-loading={status === "sending"}
             disabled={status === "sending"}
           >
-            {status === "sending" ? "Registering..." : "Register Now"}
+            {status === "sending" ? "Signing Up..." : "Sign Up"}
           </button>
         </div>
       </Form.Submit>

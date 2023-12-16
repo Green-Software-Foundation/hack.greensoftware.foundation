@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Nunito Sans";
+}
+
+.text-balance {
+    text-wrap: balance;
+}

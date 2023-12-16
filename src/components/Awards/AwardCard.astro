@@ -1,0 +1,14 @@
+---
+const { imgSrc, title, description, special = false } = Astro.props;
+const borderClass = special ? "border border-secondary" : "";
+---
+
+<div
+  class={`flex items-center gap-8 bg-primary-dark p-4 rounded-lg ${borderClass}`}
+>
+  <img src={imgSrc} alt="Awards layer" />
+  <div>
+    <h6 class="text-secondary text-base lg:text-lg font-bold">{title}</h6>
+    <p class="text-white text-sm lg:text-base">{description}</p>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+---
+import Form from "./Form";
+---
+
+<div class="my-12 md:my-16 lg:my-20 ">
+  <div
+    class="p-8 md:px-20 md:py-10 rounded-lg space-y-4 lg:max-w-xl lg:mx-auto text-center border-4 border-primary-dark relative"
+  >
+    <h1
+      class="text-2xl lg:text-3xl text-primary-lightest-2 font-black uppercase mb-6"
+    >
+      Register
+    </h1>
+    <Form client:idle />
+    <img
+      class="absolute bottom-0 -left-16 lg:-left-36 hidden md:block w-28 lg:w-52"
+      src="/assets/images/register-artwork.svg"
+      alt="Register Artwork"
+    />
+    <img
+      class="absolute bottom-0 -right-16 lg:-right-36 hidden md:block w-28 lg:w-52 -scale-x-100"
+      src="/assets/images/register-artwork.svg"
+      alt="Register Artwork"
+    />
+  </div>
+
+</div>

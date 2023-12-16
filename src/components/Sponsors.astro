@@ -1,0 +1,25 @@
+---
+const sponsorLogos = [
+  { src: "/assets/images/logo-ipsum-1.svg", alt: "Logo Ipsum 1" },
+  { src: "/assets/images/logo-ipsum-2.svg", alt: "Logo Ipsum 2" },
+  { src: "/assets/images/logo-ipsum-3.svg", alt: "Logo Ipsum 3" },
+  { src: "/assets/images/logo-ipsum-4.svg", alt: "Logo Ipsum 4" },
+];
+---
+
+<div class="py-12 md:py-16 lg:py-10 text-center">
+  <h1 class="text-2xl lg:text-3xl text-primary-lightest-2 font-black uppercase">
+    Sponsors
+  </h1>
+
+  <div class="mt-8 flex flex-wrap items-center justify-center gap-12">
+    {sponsorLogos.map((logo) => <img src={logo.src} alt={logo.alt} />)}
+  </div>
+
+  <a
+    href="sign-up"
+    class="mt-8 inline-block py-3 px-6 bg-secondary hover:bg-secondary-light text-primary-darkest text-sm font-bold rounded-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out"
+  >
+    Become a sponsor
+  </a>
+</div>

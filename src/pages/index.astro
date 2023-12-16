@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import WhatIsCarbonHack from "../components/WhatIsCarbonHack.astro";
+import Sponsors from "../components/Sponsors.astro";
+import Timeline from "../components/Timeline/Timeline.astro";
+import Awards from "../components/Awards/Awards.astro";
+import RegisterForm from "../components/RegisterForm.astro";
+import TheHackExperience from "../components/TheHackExperience.astro";
+import About from "../components/About.astro";
+---
+
+<BaseLayout title="Carbon Hack">
+  <Hero />
+  <WhatIsCarbonHack />
+
+  <section id="sponsors">
+    <Sponsors />
+  </section>
+
+  <section id="timeline">
+    <Timeline />
+  </section>
+
+  <section id="awards">
+    <Awards />
+  </section>
+
+  <section id="sign-up">
+    <RegisterForm />
+  </section>
+  <section>
+    <TheHackExperience />
+  </section>
+  <section id="about">
+    <About />
+  </section>
+
+</BaseLayout>

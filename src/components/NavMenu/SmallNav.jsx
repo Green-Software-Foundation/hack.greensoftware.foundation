@@ -8,13 +8,14 @@ const Nav = () => {
     { name: "Timeline", href: "timeline" },
     { name: "Awards", href: "awards" },
     { name: "Sponsors", href: "sponsors" },
+    { name: "FAQ", href: "/#faq" },
   ];
   const navLayout = isOpen && (
-    <div className="px-4 py-8 w-full bg-primary-dark text-white flex flex-col items-center justify-center rounded-2xl">
+    <div className="px-4 py-8 w-full bg-primary-dark  flex flex-col items-center justify-center rounded-2xl">
       {navItems.map((item, index) => (
         <a
           key={index}
-          className="text-lg p-4 rounded-2xl hover:text-white/50 transition-all duration-300 ease-in-out"
+          className="text-lg p-4 rounded-2xl text-white no-underline hover:text-white/50 transition-all duration-300 ease-in-out"
           href={item.href}
         >
           {item.name}
@@ -22,7 +23,7 @@ const Nav = () => {
       ))}
       <a
         href="sign-up"
-        className="text-lg p-3 ml-2 mt-2 bg-secondary hover:bg-secondary/90 text-primary-dark rounded-2xl focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out"
+        className="text-lg p-3 ml-2 mt-2 no-underline bg-secondary hover:bg-secondary/90 text-primary-dark rounded-2xl focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out"
       >
         Sign Up
       </a>

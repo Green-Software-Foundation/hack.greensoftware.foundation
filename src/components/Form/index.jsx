@@ -20,10 +20,9 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log(e)
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    if (isCheckboxChecked) data["group[383329][1]"] = isCheckboxChecked;
+    if (isCheckboxChecked) data["group[383620][1]"] = isCheckboxChecked;
     Object.keys(data).forEach((key) => {
       if (data[key] === "") {
         delete data[key];
@@ -31,8 +30,7 @@ const RegisterForm = () => {
     });
     data.tags = "4280812";
     try{
-      const message = await subscribe(formData);
-      console.log("Subscription successful:", message);
+      const message = await subscribe(data);
       window.location.href = "/thank-you";
     }catch(e){
       console.log(e)

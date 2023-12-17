@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 const Nav = () => {
@@ -9,19 +9,6 @@ const Nav = () => {
     { name: "Awards", href: "awards" },
     { name: "Sponsors", href: "sponsors" },
   ];
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
-
   const navLayout = isOpen && (
     <div className="px-4 py-8 w-full bg-primary-dark text-white flex flex-col items-center justify-center rounded-2xl">
       {navItems.map((item, index) => (
@@ -43,7 +30,7 @@ const Nav = () => {
   );
 
   return (
-    <nav className="relative text-right text-white">
+    <nav className="relative text-right text-white p-8">
       <div className="lg:hidden">
         {isOpen ? (
           <button onClick={() => setIsOpen(false)}>

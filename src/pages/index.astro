@@ -10,30 +10,13 @@ import TheHackExperience from "../components/TheHackExperience.astro";
 import About from "../components/About.astro";
 ---
 
-<BaseLayout title="Carbon Hack">
+<BaseLayout>
   <Hero />
   <WhatIsCarbonHack />
-
-  <section id="sponsors">
-    <Sponsors />
-  </section>
-
-  <section id="timeline">
-    <Timeline />
-  </section>
-
-  <section id="awards">
-    <Awards />
-  </section>
-
-  <section id="sign-up">
-    <RegisterForm />
-  </section>
-  <section>
-    <TheHackExperience />
-  </section>
-  <section id="about">
-    <About />
-  </section>
-
+  <Sponsors />
+  <Timeline />
+  <Awards />
+  <RegisterForm />
+  <TheHackExperience />
+  <About />
 </BaseLayout>

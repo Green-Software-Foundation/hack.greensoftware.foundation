@@ -5,7 +5,6 @@ const timelineCards = [
     date: "15 January",
     event: "Registration begins",
     phase: "current phase",
-    special: true,
   },
   { date: "26 February", event: "Hackathon Starts" },
   {
@@ -16,21 +15,24 @@ const timelineCards = [
 ];
 ---
 
-<div class="py-12 md:py-16 lg:py-10">
-  <h1 class="text-2xl lg:text-3xl text-primary-lightest-2 font-black uppercase">
-    Timeline
-  </h1>
+<section id="timeline">
+  <div class="py-12 md:py-16 lg:py-10">
+    <h1
+      class="text-2xl lg:text-3xl text-primary-lightest-2 font-black uppercase"
+    >
+      Timeline
+    </h1>
 
-  <div class="mt-8 grid grid-cols-1 lg:grid-cols-4 gap-4">
-    {
-      timelineCards.map((card) => (
-        <TimelineCard
-          date={card.date}
-          event={card.event}
-          phase={card.phase}
-          special={card.special}
-        />
-      ))
-    }
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-4 gap-4">
+      {
+        timelineCards.map((card) => (
+          <TimelineCard
+            date={card.date}
+            event={card.event}
+            phase={card.phase}
+          />
+        ))
+      }
+    </div>
   </div>
-</div>
+</section>

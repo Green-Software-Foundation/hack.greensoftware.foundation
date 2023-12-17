@@ -1,9 +1,8 @@
 import { useState } from "react";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 import * as Form from "@radix-ui/react-form";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
-
+import  useMailchimpSubscribe  from "../../hooks/useMailchimpSubscribe";
 import * as styles from "./styles.module.css";
 
 const url = `https://foundation.us5.list-manage.com/subscribe/post?u=ddc99c7db248c3df0ef4f7d24&amp;id=ebd4f98bd5&amp;f_id=006325ebf0`;
@@ -15,9 +14,11 @@ const isFloatingProps = {
     }
   },
 };
-const CustomForm = ({ status, message, onValidated }) => {
+const RegisterForm = () => {
+  const { subscribe, status, message } = useMailchimpSubscribe(url);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const handleSubmit = async (e) => {
+    console.log("submit");
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
@@ -28,12 +29,17 @@ const CustomForm = ({ status, message, onValidated }) => {
       }
     });
     data.tags = "4280812";
-    await onValidated(data);
-    console.log(data);
+    try{
+      const message = await subscribe(formData);
+      console.log("Subscription successful:", message);
+      window.location.href = "/thank-you";
+    }catch(e){
+      console.log(e)
+    }
   };
 
   return (
-    <Form.Root className={styles.form} onSubmit={handleSubmit}>
+    <Form.Root className={styles.form} onSubmit={handleSubmit} action={`#sign-up`}>
       {status === "error" && (
         <div className={styles.errorWrapper}>
           <p className={styles.errorMsg}>
@@ -111,7 +117,7 @@ const CustomForm = ({ status, message, onValidated }) => {
           </Checkbox.Indicator>
         </Checkbox.Root>
         <label
-          className="flex items-center text-primary-lightest-2 text-sm text-left gap-3"
+          className="flex items-center text-primary-lightest-2 text-xs text-left gap-3"
           htmlFor="c1"
         >
           Also subscribe me to the green software foundation newsletter
@@ -119,7 +125,7 @@ const CustomForm = ({ status, message, onValidated }) => {
       </div>
       <p className="text-primary-lighter text-xs text-left mb-3">
         * We are using GitHub as the hackathon platform so you must have a valid
-        GitHub login and username, if you don't you can create one using <a href="https://github.com/join" target="_blank">this
+        GitHub login and username, if you don't you can create one using <a href="https://github.com/join" target="_blank" rel="noopener noreferrer">this
         link</a>
       </p>
       <Form.Submit asChild>
@@ -137,18 +143,5 @@ const CustomForm = ({ status, message, onValidated }) => {
     </Form.Root>
   );
 };
-
-const RegisterForm = () => (
-  <MailchimpSubscribe
-    url={url}
-    render={({ subscribe, status, message }) => (
-      <CustomForm
-        status={status}
-        message={message}
-        onValidated={(formData) => subscribe(formData)}
-      />
-    )}
-  />
-);
 
 export default RegisterForm;

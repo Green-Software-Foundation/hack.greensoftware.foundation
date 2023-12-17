@@ -10,21 +10,54 @@ import "@fontsource/nunito-sans/900.css";
 import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/NavMenu/Navbar.astro";
+const { isSimple } = Astro.props;
+const meta = {
+  title: "Carbon Hack",
+  description: "Carbon Hack Desc",
+  url: "https://hack.greensoftware.foundation",
+  image: "https://hack.greensoftware.foundation/images/og-image.png",
+};
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HT4CVZXNMJ"
+    ></script>
+    <script>
+      // @ts-ignore
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        // @ts-ignore
+        dataLayer.push(arguments);
+      }
+      // @ts-ignore
+      gtag("js", new Date());
+      // @ts-ignore
+      gtag("config", "G-HT4CVZXNMJ");
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{Astro.props.title}</title>
-    <meta name="title" content="Carbon Hack" />
-    <meta name="description" content="Carbon Hack Desc" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{meta.title}</title>
+    <meta name="title" content={meta.title} />
+    <meta name="description" content={meta.description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={meta.url} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:image" content={meta.image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={meta.url} />
+    <meta property="twitter:title" content={meta.title} />
+    <meta property="twitter:description" content={meta.description} />
+    <meta property="twitter:image" content={meta.image} />
     <ViewTransitions />
   </head>
-  <body
-    class="w-full max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-5xl mx-auto my-8 bg-primary-darkest text-balance"
-    transition:animate="fade"
-  >
+  <body class="bg-primary-darkest text-balance" transition:animate="fade">
     <img
       class="absolute top-0 right-0 hidden md:block md:w-3/12 lg:w-fit"
       src="/assets/images/hero-artwork-right.svg"
@@ -33,20 +66,26 @@ import Navbar from "../components/NavMenu/Navbar.astro";
       class="absolute top-0 left-0 hidden md:block md:w-3/12 lg:w-fit"
       src="/assets/images/hero-artwork-left.svg"
     />
-    <img
-      class="absolute md:top-[1700px] lg:top-[1400px] right-0 hidden md:block md:w-3/12 lg:w-fit"
-      src="/assets/images/sponsors-artwork.svg"
-    />
-    <img
-      class="absolute md:top-[1700px] lg:top-[1400px] right-0 hidden md:block md:w-3/12 lg:w-fit"
-      src="/assets/images/sponsors-artwork.svg"
-    />
-    <img
-      class="absolute md:top-[3000px] lg:top-[2200px] left-0 hidden md:block md:w-2/12"
-      src="/assets/images/awards-artwork.svg"
-    />
+    {
+      !isSimple && (
+        <>
+          <img
+            class="absolute md:top-[1700px] lg:top-[1400px] right-0 hidden md:block md:w-3/12 lg:w-fit"
+            src="/assets/images/sponsors-artwork.svg"
+          />
+          <img
+            class="absolute md:top-[1700px] lg:top-[1400px] right-0 hidden md:block md:w-3/12 lg:w-fit"
+            src="/assets/images/sponsors-artwork.svg"
+          />
+          <img
+            class="absolute md:top-[3000px] lg:top-[2200px] left-0 hidden md:block md:w-2/12"
+            src="/assets/images/awards-artwork.svg"
+          />
+        </>
+      )
+    }
     <Navbar />
-    <main>
+    <main class="px-8 md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto my-8">
       <slot />
     </main>
     <Footer />

@@ -9,3 +9,8 @@ body {
 .text-balance {
     text-wrap: balance;
 }
+a{
+    /* add tailwind color secondary */
+    color: #AECC53;
+    text-decoration: underline;
+}

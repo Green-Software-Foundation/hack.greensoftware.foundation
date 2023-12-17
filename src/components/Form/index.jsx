@@ -46,7 +46,7 @@ const RegisterForm = () => {
           </p>
         </div>
       )}
-      <div className={styles.row}>
+      <div className="md:flex gap-4">
         <Form.Field className={styles.field} name="FNAME">
           <div className={styles.inputWrapper}>
             <Form.Control

@@ -4,10 +4,10 @@ import { Icon } from "@iconify/react";
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = [
-    { name: "About", href: "about" },
-    { name: "Timeline", href: "timeline" },
-    { name: "Awards", href: "awards" },
-    { name: "Sponsors", href: "sponsors" },
+    { name: "About", href: "/#about" },
+    { name: "Timeline", href: "/#timeline" },
+    { name: "Awards", href: "/#awards" },
+    { name: "Sponsors", href: "/#sponsors" },
     { name: "FAQs", href: "/#faq" },
   ];
   const navLayout = isOpen && (

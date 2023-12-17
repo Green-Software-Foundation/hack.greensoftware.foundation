@@ -116,10 +116,10 @@ const FAQ = () => {
           >
             {faqs.map((faq) => (
               <AccordionItem key={faq.question} value={faq.question}>
-                <AccordionTrigger className="text-white font-bold text-lg">
+                <AccordionTrigger className="text-white font-bold  text-left text-base md:text-lg">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-base">
+                <AccordionContent className="text-sm md:text-base">
                   <p className="text-primary-lighter whitespace-break-spaces">
                     {faq.answer}
                   </p>

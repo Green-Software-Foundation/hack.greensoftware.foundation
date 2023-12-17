@@ -8,7 +8,7 @@ const Nav = () => {
     { name: "Timeline", href: "timeline" },
     { name: "Awards", href: "awards" },
     { name: "Sponsors", href: "sponsors" },
-    { name: "FAQ", href: "/#faq" },
+    { name: "FAQs", href: "/#faq" },
   ];
   const navLayout = isOpen && (
     <div className="px-4 py-8 w-full bg-primary-dark  flex flex-col items-center justify-center rounded-2xl">

@@ -106,7 +106,7 @@ const FAQ = () => {
   return (
     <section id="faq">
       <div className="py-12 md:py-16 lg:py-10">
-        <h1 className="text-2xl lg:text-3xl text-primary-lightest-2 font-black uppercase text-center">
+        <h1 className="text-2xl lg:text-3xl text-primary-lightest-2 font-black text-center">
           FAQs
         </h1>
         <div className="w-full max-w-3xl mx-auto">

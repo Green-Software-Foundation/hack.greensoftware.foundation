@@ -18,9 +18,9 @@ const RegisterForm = () => {
   const { subscribe, status, message } = useMailchimpSubscribe(url);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const handleSubmit = async (e) => {
-    console.log(e)
     e.preventDefault();
-    
+    e.stopPropagation();
+    console.log(e)
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     if (isCheckboxChecked) data["group[383329][1]"] = isCheckboxChecked;

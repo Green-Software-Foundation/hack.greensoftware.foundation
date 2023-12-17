@@ -13,9 +13,9 @@ import Navbar from "../components/NavMenu/Navbar.astro";
 const { isSimple } = Astro.props;
 const meta = {
   title: "Carbon Hack",
-  description: "Carbon Hack Desc",
+  description: "Carbon Hack is a dynamic competition that combines healthy rivalry with collaborative innovation. Hackers will push the limits of the framework, uncover potential weaknesses, and create innovations to enhance the tool.",
   url: "https://hack.greensoftware.foundation",
-  image: "https://hack.greensoftware.foundation/images/og-image.png",
+  image: "https://hack.greensoftware.foundation/assets/images/og-image.png",
 };
 ---
 
@@ -57,7 +57,7 @@ const meta = {
     <meta property="twitter:image" content={meta.image} />
     <ViewTransitions />
   </head>
-  <body class="bg-primary-darkest " transition:animate="fade">
+  <body class="bg-primary-darkest" transition:animate="fade">
     <img
       class="absolute top-0 right-0 hidden md:block md:w-3/12 lg:w-fit"
       src="/assets/images/hero-artwork-right.svg"

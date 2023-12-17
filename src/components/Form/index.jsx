@@ -18,8 +18,9 @@ const RegisterForm = () => {
   const { subscribe, status, message } = useMailchimpSubscribe(url);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const handleSubmit = async (e) => {
-    console.log("submit");
+    console.log(e)
     e.preventDefault();
+    
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     if (isCheckboxChecked) data["group[383329][1]"] = isCheckboxChecked;
@@ -39,7 +40,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <Form.Root className={styles.form} onSubmit={handleSubmit} action={`#sign-up`}>
+    <Form.Root className={styles.form} onSubmit={handleSubmit}>
       {status === "error" && (
         <div className={styles.errorWrapper}>
           <p className={styles.errorMsg}>
@@ -133,8 +134,6 @@ const RegisterForm = () => {
           <button
             type="submit"
             className="w-fit py-3 px-4 bg-secondary hover:bg-secondary-light text-primary-darkest font-semibold text-sm rounded-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out"
-            data-loading={status === "sending"}
-            disabled={status === "sending"}
           >
             {status === "sending" ? "Signing Up..." : "Sign Up"}
           </button>

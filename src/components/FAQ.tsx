@@ -105,11 +105,16 @@ const faqs = [
 const FAQ = () => {
   return (
     <section id="faq">
-      <div className="py-12 md:py-16 lg:py-10">
+      <div className="py-12 md:py-16 lg:py-10 text-center">
         <h1 className="text-2xl lg:text-3xl text-primary-lightest-2 font-black text-center">
           FAQs
         </h1>
-        <div className="w-full max-w-3xl mx-auto">
+        <p className="text-white mt-8">Click on the following link to view the FAQs for CarbonHack 2024
+        </p>
+        <a href="https://grnsft.org/hack/faq" target="_blank"
+          rel="noopener noreferrer"
+          className="no-underline mt-2 inline-block py-3 px-6 bg-secondary hover:bg-secondary-light text-primary-darkest text-sm font-bold rounded-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out">Read FAQs</a>
+        {/* <div className="w-full max-w-3xl mx-auto">
           <Accordion
             type="single"
             collapsible
@@ -126,7 +131,7 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>))}
           </Accordion>
-        </div>
+        </div> */}
       </div>
     </section>
   );

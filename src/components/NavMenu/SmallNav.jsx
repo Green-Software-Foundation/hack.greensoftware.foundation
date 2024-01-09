@@ -25,7 +25,7 @@ const Nav = () => {
         href="sign-up"
         className="text-lg p-3 ml-2 mt-2 no-underline bg-secondary hover:bg-secondary/90 text-primary-dark rounded-2xl focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out"
       >
-        Sign Up
+        Get Updates
       </a>
     </div>
   );

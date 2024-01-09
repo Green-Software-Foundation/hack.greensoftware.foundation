@@ -133,7 +133,7 @@ const RegisterForm = () => {
             type="submit"
             className="w-fit py-3 px-4 bg-secondary hover:bg-secondary-light text-primary-darkest font-semibold text-sm rounded-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out"
           >
-            {status === "sending" ? "Signing Up..." : "Sign Up"}
+            {status === "sending" ? "Registering..." : "Get Updates"}
           </button>
         </div>
       </Form.Submit>

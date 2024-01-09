@@ -1,6 +1,6 @@
 ---
 // Create empty array of four elements
-const sponsorLogos = Array(5).fill(null);
+const sponsorLogos = ["sentry"];
 ---
 
 <section id="sponsors">
@@ -14,15 +14,20 @@ const sponsorLogos = Array(5).fill(null);
     <div class="mt-8 flex flex-wrap items-center justify-center gap-12">
       {
         sponsorLogos.map((logo) => (
-          <div
-            class="font-extrabold text-primary-light border
-        border-primary-light rounded-md p-4 border-dashed
-      "
-          >
-            Your logo here
-          </div>
+          <img
+            src={`assets/sponsors/${logo}.svg`}
+            alt={logo}
+            class="h-12"
+          />
         ))
       }
+      <div
+      class="font-extrabold text-primary-light border
+  border-primary-light rounded-md p-4 border-dashed
+"
+    >
+      + Your logo here
+    </div>
     </div>
 
     <a

@@ -1,6 +1,17 @@
 ---
 // Create empty array of four elements
-const sponsorLogos = ["sentry-software.webp"];
+const sponsorLogos = [
+  {
+    url: "https://www.sentrysoftware.com/",
+    name: "Sentry Software",
+    logo: "sentry-software.webp",
+  },
+  {
+    url: "https://www.imda.gov.sg/",
+    name: "IMDA",
+    logo: "imda.svg",
+  },
+];
 ---
 
 <section id="sponsors">
@@ -13,21 +24,23 @@ const sponsorLogos = ["sentry-software.webp"];
 
     <div class="mt-8 flex flex-wrap items-center justify-center gap-12">
       {
-        sponsorLogos.map((logo) => (
-          <img
-            src={`assets/sponsors/${logo}`}
-            alt={logo}
-            class="h-28"
-          />
+        sponsorLogos.map(({ url, logo, name }) => (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="no-underline opacity-70 hover:opacity-100 transition-all duration-300 ease-in-out"
+          >
+            <img src={`assets/sponsors/${logo}`} alt={logo} class="h-12 " alt={name}/>
+          </a>
         ))
       }
       <div
-      class="font-extrabold text-primary-light border
-  border-primary-light rounded-md p-4 border-dashed
-"
-    >
-      + Your logo here
-    </div>
+        class="font-extrabold text-primary-light border
+  border-primary-light rounded-md p-4 border-dashed"
+      >
+        + Your logo here
+      </div>
     </div>
 
     <a

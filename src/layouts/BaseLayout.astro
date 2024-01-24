@@ -10,7 +10,7 @@ import "@fontsource/nunito-sans/900.css";
 import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/NavMenu/Navbar.astro";
-const { isSimple } = Astro.props;
+const { isSimple, noMenu } = Astro.props;
 const meta = {
   title: "Carbon Hack 24 | Online | 26th Feb to 15th March",
   description: "For 3 weeks in the early spring, developers and engineers will compete to showcase their best application in measuring the ecological footprint of software.",
@@ -84,7 +84,7 @@ const meta = {
         </>
       )
     }
-    <Navbar />
+    {noMenu && <Navbar />}
     <main class="px-8 md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto my-8">
       <slot />
     </main>

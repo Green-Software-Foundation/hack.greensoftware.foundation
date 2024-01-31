@@ -11,6 +11,7 @@ import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/NavMenu/Navbar.astro";
 const { isSimple, noMenu } = Astro.props;
+console.log(noMenu);
 const meta = {
   title: "Carbon Hack 24 | Online | 18th March to 8th April",
   description: "For 3 weeks in the early spring, developers and engineers will compete to showcase their best application in measuring the ecological footprint of software.",
@@ -84,7 +85,7 @@ const meta = {
         </>
       )
     }
-    {noMenu && <Navbar />}
+    {!noMenu && <Navbar />}
     <main class="px-8 md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto my-8">
       <slot />
     </main>

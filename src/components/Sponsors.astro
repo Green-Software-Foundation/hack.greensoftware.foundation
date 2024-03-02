@@ -31,8 +31,15 @@ const sponsorLogos = [
     name: "Aveva",
     logo: "aveva.svg",
     height: 40,
+  },
+  {
+    url: "https://www.nttdata.com/",
+    name: "NTT Data",
+    logo: "ntt-data.svg",
+    height: 30,
   }
 ];
+sponsorLogos.sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <section id="sponsors">

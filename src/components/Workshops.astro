@@ -1,0 +1,95 @@
+---
+const workshops = [
+  {
+    date: "March 6 2024 9:30 AM GMT",
+    link: "https://grnsft.org/if/workshop-6-3-am",
+  },
+  {
+    date: "March 6 2024 4:30 PM GMT",
+    link: "https://grnsft.org/if/workshop-6-3-pm",
+  },
+  {
+    date: "March 13 2024 9:30 AM GMT",
+    link: "https://grnsft.org/if/workshop-13-3-am",
+  },
+  {
+    date: "March 13 2024 4:30 PM GMT",
+    link: "https://grnsft.org/if/workshop-13-3-pm",
+  },
+];
+---
+
+<section id="q&a-session">
+  <div
+    class="relative my-12 md:my-16 lg:my-10 p-10 bg-primary-dark rounded-md grid md:grid-cols-[2fr_3fr] gap-6"
+  >
+    <div class="self-center">
+      <img src="/assets/images/hackathon.svg" alt="Hackathon Illustration" />
+    </div>
+    <div class="w-full">
+      <h1
+        class="text-2xl lg:text-3xl text-primary-lightest-2 font-black uppercase"
+      >
+        Improve How You Measure Software for <span class="text-secondary"
+          >Sustainability</span
+        >
+      </h1>
+
+      <p class="mt-4 text-sm lg:text-base text-primary-lightest-2">
+        This training will guide you through the Impact Framework command line
+        tool, manifest files, and how to write a simple plugin.
+      </p>
+
+      <div class="flex flex-col gap-2 mt-4">
+        {
+          workshops.map(({ date, link }) => {
+            return (
+              <div class="flex flex-col md:flex-row items-center justify-between gap-4 bg-primary text-white p-4 rounded-lg">
+                <div class="flex items-center gap-2 font-bold ">
+                  <svg
+                    class="h-6 w-6 text-secondary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <p class="date">{date}</p>
+                </div>
+                <div>
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="no-underline inline-block py-2 px-3 bg-secondary hover:bg-secondary-light text-primary-darkest text-sm font-bold rounded-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out whitespace-nowrap shrink-0"
+                  >
+                    Sign up
+                  </a>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll(".date").forEach((el) => {
+    el.textContent = new Date(el.textContent).toLocaleString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      timeZoneName: "short",
+      hour12: true,
+    });
+  });
+</script>

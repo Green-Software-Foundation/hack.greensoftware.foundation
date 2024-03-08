@@ -64,10 +64,11 @@ const workshops = [
                 </div>
                 <div>
                   <a
+                    data-date={date}
                     href={link}
                     target="_blank"
                     rel="noreferrer noopener"
-                    class="no-underline inline-block py-2 px-3 bg-secondary hover:bg-secondary-light text-primary-darkest text-sm font-bold rounded-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out whitespace-nowrap shrink-0"
+                    class="sign-up-button no-underline inline-block py-2 px-3 bg-secondary hover:bg-secondary-light text-primary-darkest text-sm font-bold rounded-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary-darkest transition-all duration-300 ease-in-out whitespace-nowrap shrink-0"
                   >
                     Sign up
                   </a>
@@ -92,4 +93,18 @@ const workshops = [
       hour12: true,
     });
   });
+
+  // Disable the button if the date is in the past
+  document
+    .querySelectorAll(".sign-up-button")
+    .forEach((el: HTMLAnchorElement) => {
+      const date = new Date(el.dataset.date);
+      console.log("🚀 ~ document.querySelectorAll ~ date:", date);
+
+      if (date < new Date()) {
+        el.classList.add("cursor-not-allowed", "opacity-50");
+        el.removeAttribute("href");
+        el.textContent = "Ended";
+      }
+    });
 </script>

@@ -99,8 +99,6 @@ const workshops = [
     .querySelectorAll(".sign-up-button")
     .forEach((el: HTMLAnchorElement) => {
       const date = new Date(el.dataset.date);
-      console.log("🚀 ~ document.querySelectorAll ~ date:", date);
-
       if (date < new Date()) {
         el.classList.add("cursor-not-allowed", "opacity-50");
         el.removeAttribute("href");

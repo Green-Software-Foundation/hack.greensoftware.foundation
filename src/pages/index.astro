@@ -4,7 +4,8 @@ import Hero from "../components/Hero.astro";
 import WhatIsCarbonHack from "../components/WhatIsCarbonHack.astro";
 import Sponsors from "../components/Sponsors.astro";
 import Timeline from "../components/Timeline/Timeline.astro";
-import Awards from "../components/Awards/Awards.astro";
+import Awards from "../components/Awards/index.astro";
+import Judges from "../components/Judges/index.astro";
 import RegisterForm from "../components/RegisterForm.astro";
 import TheHackExperience from "../components/TheHackExperience.astro";
 import FAQ from "../components/FAQ";
@@ -21,6 +22,7 @@ import CommunityPartners from "../components/CommunityPartners.astro";
   <CommunityPartners />
   <Timeline />
   <Awards />
+  <Judges />
   <RegisterForm />
   <TheHackExperience />
   <FAQ client:idle />

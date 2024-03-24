@@ -1,0 +1,80 @@
+---
+import JudgeCard from "./JudgeCard.astro";
+
+const judges = [
+  {
+    name: "Navveen Balani",
+    title: "Chief Technologist",
+    company: "Accenture",
+    image: "/assets/judges/navveen-balani.jpg",
+    url: "https://www.linkedin.com/in/naveenbalani"
+  },
+  {
+    name: "Ioannis Kolaxis",
+    title: "Director, Technology Sustainability Innovation",
+    company: "Accenture",
+    image: "/assets/judges/ioannis-kolaxis.jpg",
+    url: "https://www.linkedin.com/in/ioannis-kolaxis"
+  },
+  {
+    name: "Eleonore Gueit",
+    title: "Sustainable Engineering Advocate",
+    company: "Amaedus",
+    image: "/assets/judges/eleonore-gueit.jpg",
+    url: "https://www.linkedin.com/in/eleonore-gueit"
+  },
+  {
+    name: "Daniel Lazaro",
+    title: "Senior Technical Program Manager",
+    company: "Aveva",
+    image: "/assets/judges/daniel-lazaro.jpg",
+    url: "https://www.linkedin.com/in/daniellazaro"
+  },
+  {
+    name: "Matthew Kropp",
+    title: "Managing Director and Senior Partner, Chief Technology Officer",
+    company: "BCG X",
+    image: "/assets/judges/matthew-kropp.webp",
+    url: "https://www.linkedin.com/in/matt-kropp"
+  },
+  {
+    name: "Clifton Phua",
+    title: "Director of Labs",
+    company: "BizTech Group, IMDA",
+    image: "/assets/judges/clifton-phua.jpg",
+    url: "https://www.linkedin.com/in/cliftonphua"
+  },
+  {
+    name: "Gadhu Sundaram",
+    title: "Vice President, Application Services",
+    company: "NTT DATA UK",
+    image: "/assets/judges/gadhu-sundaram.jpg",
+    url: "https://www.linkedin.com/in/gadhu-sundaram-9208029"
+  },
+  {
+    name: "Bertrand Martin",
+    title: "CEO",
+    company: "Sentry Software",
+    image: "/assets/judges/bertrand-martin.jpg",
+    url: "https://www.linkedin.com/in/bertysentry"
+  },
+];
+---
+
+<section id="judges">
+  <div class="py-12 md:py-16 lg:py-10">
+    <h1
+      class="text-2xl lg:text-3xl text-primary-lightest-2 font-black uppercase"
+    >
+      Judges
+    </h1>
+
+    <div class="mt-8 grid grid-cols-4 gap-4">
+      {
+        judges
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((judge) => <JudgeCard {...judge} />)
+      }
+    </div>
+  </div>
+</section>
